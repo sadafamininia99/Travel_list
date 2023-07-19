@@ -3,9 +3,8 @@ export default function App(){
   function logo(){
     return <h1>
 
-      💋Far away 
-
-    </h1>
+ 🏝️ Far Away 🧳</h1>;
+   
 
   }
 
