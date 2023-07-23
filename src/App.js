@@ -1,9 +1,24 @@
-export default function App(){
+const initialItems=[
+  {
+    id:1,describtion:"passport",quantity:2,
+    packed:false},
+    {
+      id:2,describtion:"socks",quantity:12,
+      packed:false},
+]
 
-  function logo(){
+
+export default function App(){
+  return <div className="app">
+    <Logo />
+    <Form />
+    <PakagingList/>
+  </div>
+
+  function Logo (){
     return <h1>
 
-      💋Far away 
+      Far away  ✌️🤣
 
     </h1>
 
@@ -18,13 +33,15 @@ export default function App(){
     
   }
 
-  function PakagingList(){
-    return <div className="list">list</div>
+  // function PakagingList(){
+  //   return <ul className="list">{
+  //     {initialItems.map(item=>)
+  //     }</ul>
     
-  }
+  // }
 
-  function Status(){
-    return <footer>
+  function Stats  (){
+    return <footer className="stats">
       toyour items on the list
     </footer>
     
