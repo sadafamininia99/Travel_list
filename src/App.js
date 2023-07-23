@@ -1,9 +1,9 @@
 const initialItems=[
   {
-    id:1,describtion:"passport",quantity:2,
+    id:1,describtion:"passport",quantity:1,
     packed:false},
     {
-      id:2,describtion:"socks",quantity:12,
+      id:2,describtion:"socks",quantity:2,
       packed:false},
 ]
 
