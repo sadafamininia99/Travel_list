@@ -1,3 +1,5 @@
+import { Select } from "@mui/material";
+
 const initialItems=[
   {
     id:1,describtion:"passport",quantity:1,
@@ -23,9 +25,20 @@ export default function App(){
   }
 
   function Form (){
-    <div className="add-form">
+    return(
+       <form className="add-form">
       <h3>what do you need for your trip ?😚</h3>
-    </div>
+      <select >
+        <option value={1} >1</option>
+        <option value={2} >2</option>
+        <option value={3} >3</option>
+
+      </select>
+      <input type="text" placeholder="Item ..."/>
+      <button>Add</button>
+    </form>
+    )
+   
       
   }
 
