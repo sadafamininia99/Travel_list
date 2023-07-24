@@ -3,10 +3,16 @@ import { Select } from "@mui/material";
 const initialItems=[
   {
     id:1,describtion:"passport",quantity:1,
-    packed:false},
-    {
+    packed:false
+  },
+  {
       id:2,describtion:"socks",quantity:2,
-      packed:false},
+      packed:false
+  },
+  {
+    id:3,describtion:"Books",quantity:12,
+    packed:true
+  },
 ]
 
 
@@ -23,15 +29,18 @@ export default function App(){
     return <h1>Far away </h1>
 
   }
-
+ 
   function Form (){
     return(
        <form className="add-form">
       <h3>what do you need for your trip ?😚</h3>
       <select >
-        <option value={1} >1</option>
-        <option value={2} >2</option>
-        <option value={3} >3</option>
+      {Array.from({length :20}, ( _ , i)=> i+1).map
+      ((num)=>(
+        <option value={num} key={num}>
+          {num}
+        </option>
+      ))}
 
       </select>
       <input type="text" placeholder="Item ..."/>
@@ -48,7 +57,7 @@ export default function App(){
     <div className="list">
       <ul >
       {initialItems.map((item=>
-      <Item item={item}/>
+      <Item item={item} key={item.id}/>
       ))}
       </ul>
   
@@ -59,10 +68,11 @@ export default function App(){
 function Item({item}){
   return(
     <li>
-      <span>
+      <span style={item.packed ? {textDecoration:"line-through"}  : {}}>
          {""}
             {item.quantity} {item.describtion}
         </span>
+        <button>❌</button>
         </li>
      );
     }
