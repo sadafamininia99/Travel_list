@@ -1,4 +1,4 @@
-import { Select } from "@mui/material";
+import { useState } from "react";
 
 const initialItems=[
   {
@@ -18,6 +18,7 @@ const initialItems=[
 
 export default function App(){
 
+  
   return <div className="app">
     <Logo />
     <Form />
@@ -31,6 +32,8 @@ export default function App(){
   }
  
   function Form (){
+    const [describtion,setDescribtion] =useState('');
+
     return(
        <form className="add-form">
       <h3>what do you need for your trip ?😚</h3>
@@ -43,7 +46,11 @@ export default function App(){
       ))}
 
       </select>
-      <input type="text" placeholder="Item ..."/>
+      <input type="text" 
+      placeholder="Item ..."
+      value={describtion}
+      onChange={(e) =>setDescribtion(e.target.value)}
+      />
       <button>Add</button>
     </form>
     )
