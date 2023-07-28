@@ -49,7 +49,8 @@ export default function App(){
       <input type="text" 
       placeholder="Item ..."
       value={describtion}
-      onChange={(e) =>setDescribtion(e.target.value)}
+      onChange={(e) =>  
+        setDescribtion(e.target.value)}
       />
       <button>Add</button>
     </form>
