@@ -33,11 +33,13 @@ export default function App(){
  
   function Form (){
     const [describtion,setDescribtion] =useState('');
+    const [quantity,setQantity]=useState(5);
+
 
     return(
        <form className="add-form">
       <h3>what do you need for your trip ?😚</h3>
-      <select >
+      <select value={quantity} onChange={e=>setQantity(e.target.value)}>
       {Array.from({length :20}, ( _ , i)=> i+1).map
       ((num)=>(
         <option value={num} key={num}>
@@ -46,10 +48,12 @@ export default function App(){
       ))}
 
       </select>
+
       <input type="text" 
       placeholder="Item ..."
       value={describtion}
       onChange={(e) =>  
+        //e.target.value is alwayse a strings.
         setDescribtion(e.target.value)}
       />
       <button>Add</button>
